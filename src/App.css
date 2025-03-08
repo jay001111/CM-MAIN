@@ -1,0 +1,113 @@
+#nav{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  align-items: baseline;
+  background:#151515;
+  flex-wrap:wrap;
+  float:right;
+  margin-top: 1.34vh;
+  
+
+
+}
+#logo{
+  display:flex;
+  float:left;
+  margin:none;
+}
+#page2{
+  
+  width: 50vh;
+  margin: 30vh;
+}
+#page1{
+  width: 105%;
+}
+#name{
+  
+ 
+  color:#ffffff;
+  font-size: 40px;
+  font-family: "Markazi Text","Sans";
+  font-weight:lighter;
+  margin-top: 3vh;
+  margin-left: 3vh;
+  float: right;
+ 
+}
+#name #club{
+  color:#0176B3;
+}
+#nav p,button{
+  margin-right:6vh;
+  margin-top:2vh;
+}
+#nav button{
+  background-color: #0176B3;
+  border-radius: 15px;
+  color:#ffffff;
+  padding: 15px;
+  box-shadow: none;
+  outline: none;
+  border:none;
+}
+#nav p{
+  color: #ffffff;
+}
+
+#page3{
+  height:10vh;
+}
+#page2{
+  float:left;
+  margin-top: 35vh;
+  margin-right: 5vh;
+  width:85vh;
+  margin-left: 0vh;
+}
+#pics{
+  display:flex;
+
+  flex-direction: column;
+  margin-left: 1vh;
+}
+#description {
+  text-align: justify;
+  color:#ffffff;
+ 
+  margin-top: 30vh;
+  /* overflow-wrap: break-word;
+  word-wrap: break-word; */
+  width: 80vh;
+  float:left;
+  font-family: "Red Hat Display";
+  line-height: 5vh;
+
+  
+}
+#site{
+  background-color: #0176B3;
+  border-radius: 15px;
+  color:#ffffff;
+  padding: 15px;
+  box-shadow: none;
+  outline: none;
+  border:none;
+
+  float:left;
+  margin-left: 10vh;
+ 
+}
+#stud_part{
+  height: 60px;
+}
+#infi {
+  width: 300px;
+  
+}
+#infi_flex{
+  margin-top: 3vh;
+  display: flex;
+  align-items:flex-start;
+}
