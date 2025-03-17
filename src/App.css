@@ -7,7 +7,7 @@
   flex-wrap:wrap;
   float:right;
   margin-top: 1.34vh;
-  
+  font-family:  "Red Hat Display";
 
 
 }
@@ -18,8 +18,10 @@
 }
 #page2{
   
-  width: 50vh;
-  margin: 30vh;
+  width: 60vh;
+ 
+  margin-bottom: 15vh;
+
 }
 #page1{
   width: 105%;
@@ -63,7 +65,7 @@
   float:left;
   margin-top: 35vh;
   margin-right: 5vh;
-  width:85vh;
+  width:110vh;
   margin-left: 0vh;
 }
 #pics{
@@ -71,6 +73,7 @@
 
   flex-direction: column;
   margin-left: 1vh;
+  margin-bottom: 0vh;
 }
 #description {
   text-align: justify;
@@ -79,14 +82,15 @@
   margin-top: 30vh;
   /* overflow-wrap: break-word;
   word-wrap: break-word; */
-  width: 80vh;
+  width: 75vh;
   float:left;
   font-family: "Red Hat Display";
-  line-height: 5vh;
+  line-height: 4vh;
+  font-size:large;
 
   
 }
-#site{
+.site{
   background-color: #0176B3;
   border-radius: 15px;
   color:#ffffff;
@@ -94,7 +98,7 @@
   box-shadow: none;
   outline: none;
   border:none;
-
+  width:20vh;
   float:left;
   margin-left: 10vh;
  
@@ -110,4 +114,54 @@
   margin-top: 3vh;
   display: flex;
   align-items:flex-start;
+}
+#deco{
+  width: 100%;
+  height:30vh;
+  background-image: url("./Component 8.svg");
+margin-top: none;
+ display: flex;
+ align-items: center  ;
+ justify-content:space-around;
+}
+
+.site1{
+  background-color: #0176B3;
+  border-radius: 15px;
+  color:#ffffff;
+  padding: 15px;
+  box-shadow: none;
+  outline: none;
+  border:none;
+  width:20vh;
+  
+  margin-left: 10vh;
+}
+#head{
+  color: #ffffff;
+  font-size:xx-large;
+}
+#footer{
+background-color: #0F0F0F;  
+height: 60vh;
+width: 100%;
+display: flex;
+align-items: center;
+
+}
+#footer #logo{
+  height: 40vh;
+  margin-left: 2vh;
+}
+#quick,#credits{
+  color: #ffffff;
+  font-family:"Red Hat Display" ;
+  margin-left: 40vh;
+}
+#icons{
+  display: flex;
+  
+}
+#icon2{
+  margin-left: 3vh;
 }
