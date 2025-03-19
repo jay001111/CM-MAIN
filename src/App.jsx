@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import './App.css';
-
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   
 
   return (
@@ -12,37 +17,39 @@ function App() {
    </div>
        
    
-   <div className="menu-toggle" onClick={toggleMenu}>
-        ☰
-    </div>
+  
     
    
     
-      <div id="nav">
-      
-      <p>Home  </p>
-      
-      
-      <p>Infinitum  </p>
-      
-      
-      <p>Events  </p>
+      <div  className={isOpen ? "nav-menuopen" : "nav-menu"}>
      
       
-      <p>Our Team </p>
+      <p > Home  </p>
+      
+      
+      <p >Infinitum  </p>
+      
+      
+      <p >Events  </p>
+     
+      
+      <p >Our Team </p>
     
       
-      <p>Gallery  </p>
+      <p >Gallery  </p>
       
       
-        <button>
+        <button >
         About Us
       </button>
      
       
-      <button>
+      <button >
         Contact Us
       </button>
+      <button className="menu-toggle" onClick={toggleMenu} >
+        ☰
+    </button>
       </div>
       
    

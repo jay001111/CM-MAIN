@@ -45,7 +45,7 @@
   margin-right:6vh;
   margin-top:2vh;
 }
-#nav button{
+.nav-menu button{
   background-color: #0176B3;
   border-radius: 15px;
   color:#ffffff;
@@ -54,7 +54,7 @@
   outline: none;
   border:none;
 }
-#nav p{
+.nav-menu p{
   color: #ffffff;
 }
 
@@ -164,4 +164,42 @@ align-items: center;
 }
 #icon2{
   margin-left: 3vh;
+}
+/* Hide nav menu by default */
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: baseline;
+  background:#151515;
+  flex-wrap:wrap;
+  float:right;
+  margin-top: 1.34vh;
+  font-family:  "Red Hat Display";
+
+}
+
+/* Show menu when open */
+.nav-menuopen {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Button for small screens */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+}
+
+/* Show menu button on small screens */
+@media (max-width: 1188px) {
+  .menu-toggle {
+      display: block;
+  }
+  /* .elements{
+    display: none;
+  } */
 }
