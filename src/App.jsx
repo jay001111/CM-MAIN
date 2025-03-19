@@ -12,7 +12,9 @@ function App() {
    </div>
        
    
-    
+   <div className="menu-toggle" onClick={toggleMenu}>
+        ☰
+    </div>
     
    
     
