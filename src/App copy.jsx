@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import Reveal from './AnimatedContent';
 
-import './assets/css/bootstrap.min.css';
+import "./assets/css/bootstrap.min.css";
 
-import './assets/css/slicknav.css';
-import './assets/css/nivo-lightbox.css';
-import './assets/css/animate.css';
+import "./azonics.css";
+import "https://cdn.lineicons.com/2.0/LineIcons.css";
+import "./slicknav.css";
+import "./assets/css/nivo-lightbox.css";
+import "./assets/css/animate.css";
 
-import './assets/css/responsive.css';
+import "./responsive.css";
 import './App.css';
 
 import AOS from "aos";
@@ -17,20 +18,11 @@ import "aos/dist/aos.css";
 
 
 
+
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1600 });
   }, []);
-  // const ref=useRef(null);
-  // const isInView=useInView(ref,{once:true});
-  // const mainControls=useAnimation();
-  // useEffect(()=>{
-  //   if(isInView){
-  //     mainControls.start("visible");
-  //   }
-  // },[isInView]);
-
-  
   const [isOpen, setIsOpen] = useState(false);
 
   const [key, setKey] = useState(0); // Key to force re-render
@@ -176,7 +168,7 @@ function App() {
           </div>
         </div>
       </div>
-      <section id="services"  className="services section-padding">
+      <section id="services" onMouseEnter={restartAnimation} className="services section-padding" data-aos="zoom-in">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -312,7 +304,7 @@ function App() {
             </div>
             <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
               <div class="counter wow fadeInRight" data-wow-delay="0.6s">
-                <div class="icon"><i class="lni-time"></i></div>
+                <div class="icon"><i class="lni-timer"></i></div>
                 <p>January 2024</p>
               </div>
             </div>
