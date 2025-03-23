@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Reveal from './AnimatedContent';
+import {Reveal,Animate_1,Animate_2,Animate_3,Animate_4} from './AnimatedContent';
 
 import './assets/css/bootstrap.min.css';
 
@@ -114,8 +114,13 @@ function App() {
 
       </div>
       <div className={isOpen ? 'dropdown_open' : 'dropdown'}>
+      
         <div id="menu_drop"> ☰</div>
+       
         <div className='drop_list' onClick={toggleMenu}>
+        <img id="pop"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
+        <button id="cross"> ☰
+        </button>
           <p id="items">Home</p>
           <p id="items">Infinitum</p>
           <p id="items">Events</p>
@@ -149,25 +154,45 @@ function App() {
           <button className="site">Visit Site</button>
         </div>
       </div>
+   
       <div id="team">
+    
         <div id="event">
 
           <b>GALLERIA</b>
         </div>
         <div id="boxes">
+        <Animate_2 width="100%" delay={0.2}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={0.6}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={1.1}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={0.2}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={0.6}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={1.1}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={0.2}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={0.6}>
           <div className="box"></div>
+          </Animate_2>
+          <Animate_2 width="100%" delay={1.1}>
           <div className="box"></div>
-
+          </Animate_2>
         </div>
 
       </div>
+      
       <div id="events_">
         <div id="black-sheet">
           <div id="event_title">
@@ -176,6 +201,7 @@ function App() {
           </div>
         </div>
       </div>
+      
       <section id="services"  className="services section-padding">
         <div className="container">
           <div className="row">
@@ -190,6 +216,7 @@ function App() {
             </div>
           </div>
           <div className="services-wrapper">
+          <Reveal width="100%" delay={1.2}>
             <div className="services-item animate__animated animate__fadeInDown" style={{ animationDelay: "1.2s" }}>
               <div className="icon">
                 <i className="lni lni-consulting"></i>
@@ -198,6 +225,8 @@ function App() {
                 <h3><a href="#">Diligent and dependable executives</a></h3>
               </div>
             </div>
+            </Reveal>
+             <Reveal width="100%" delay={0.2}>
             <div className="services-item animate__animated animate__fadeInDown" style={{ animationDelay: "0.2s" }}>
               <div className="icon">
                 <i className="lni lni-network"></i>
@@ -205,7 +234,9 @@ function App() {
               <div className="services-content">
                 <h3><a href="#">Adept and aspiring team</a></h3>
               </div>
-            </div>
+              
+            </div> 
+            </Reveal><Reveal width="100%" delay={0.4}>
             <div className="services-item animate__animated animate__fadeInDown" style={{ animationDelay: "0.4s" }}>
               <div className="icon">
                 <i className="lni lni-code-alt"></i>
@@ -213,7 +244,8 @@ function App() {
               <div className="services-content">
                 <h3><a href="#">Proficient technical team</a></h3>
               </div>
-            </div>
+              
+            </div></Reveal> <Reveal width="100%" delay={0.6}>
             <div className="services-item animate__animated animate__fadeInDown" style={{ animationDelay: "0.6s" }}>
               <div className="icon">
                 <i className="lni lni-pallet"></i>
@@ -222,6 +254,7 @@ function App() {
                 <h3><a href="#">Ingenious and idealistic designers</a></h3>
               </div>
             </div>
+            </Reveal> <Reveal width="100%" delay={0.8}>
             <div className="services-item animate__animated animate__fadeInDown" style={{ animationDelay: "0.8s" }}>
               <div className="icon">
                 <i className="lni lni-bar-chart"></i>
@@ -229,7 +262,7 @@ function App() {
               <div className="services-content">
                 <h3><a href="#">Analytical marketing and event organization team</a></h3>
               </div>
-            </div>
+            </div> </Reveal><Reveal width="100%" delay={1}>
             <div className="services-item animate__animated animate__fadeInDown" style={{ animationDelay: "1s" }}>
               <div className="icon">
                 <i className="lni lni-pencil-alt"></i>
@@ -238,9 +271,12 @@ function App() {
                 <h3><a href="#">Articulate content writers</a></h3>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
+       
       </section>
+      
       <section id="contact-us" className="section-padding" data-aos="zoom-in">
         <div className="container">
           <div className="row justify-content-center">
@@ -294,43 +330,59 @@ function App() {
 
 
 
-
-      <div id="deco">
-
+ 
+      <div className='deco'>
+      <Animate_1  width="100% " delay={0}>
+        <div className="dive">
         <h2 id="head">Dive into the realm of Mathematica!</h2>
         <button className='site1'>Know More!</button>
-
-      </div>
-      <section class="counter-section section-padding">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
-              <div class="counter wow fadeInRight" data-wow-delay="0.3s">
-                <div class="icon"><i class="lni-map"></i></div>
-                <p>INFINITUM</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
-              <div class="counter wow fadeInRight" data-wow-delay="0.6s">
-                <div class="icon"><i class="lni-time"></i></div>
-                <p>January 2024</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
-              <div class="counter wow fadeInRight" data-wow-delay="0.9s">
-                <div class="icon"><i class="lni-users"></i></div>
-                <p>30,000+ Participants</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
-              <div class="counter wow fadeInRight" data-wow-delay="1.2s">
-                <div class="icon"><i class="lni-cup"></i></div>
-                <p>1 lakh worth prizes</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+        </Animate_1>
+      </div>
+      
+      <section className="counter-section section-padding">
+  <div className="container">
+    <div className="row">
+      
+    <div className="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
+  <Animate_4 width="100%" delay="0.3">
+    <div className="counter wow fadeInRight" data-wow-delay="0.3s">
+      <div className="icon"><i className="lni lni-map"></i></div>
+      <p>INFINITUM</p>
+    </div>
+  </Animate_4>
+</div>
+
+<div className="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
+  <Animate_4 width="100%" delay="0.6">
+    <div className="counter wow fadeInRight" data-wow-delay="0.6s">
+      <div className="icon"><i className="lni lni-timer"></i></div>
+      <p>January 2024</p>
+    </div>
+  </Animate_4>
+</div>
+
+<div className="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
+  <Animate_4 width="100%" delay="0.9">
+    <div className="counter wow fadeInRight" data-wow-delay="0.9s">
+      <div className="icon"><i className="lni lni-users"></i></div>
+      <p>30,000+ Participants</p>
+    </div>
+  </Animate_4>
+</div>
+
+<div className="col-md-6 col-lg-3 col-xs-12 work-counter-widget text-center">
+  <Animate_4 width="100%" delay="1.2">
+    <div className="counter wow fadeInRight" data-wow-delay="1.2s">
+      <div className="icon"><i className="lni lni-cup"></i></div>
+      <p>1 lakh worth prizes</p>
+    </div>
+  </Animate_4>
+</div>
+    </div>
+  </div>
+</section>
+
       <div id="footer">
         <img id="logo" src="./public/Component 9.svg" />
         <p id="quick">
