@@ -267,16 +267,38 @@ align-items: center;
 }
 
 .dropdown{
-  display: none;
+display: none;
+  
+  
 }
 .dropdown_open{
   
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 90vhx;
+  position: fixed; /* Stays in the same position on scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+   /* Semi-transparent background */
+  z-index: 9999; /* High z-index to stay on top */
   
+}
+.dropdown_close{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vhx;
+  position: fixed; /* Stays in the same position on scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+   /* Semi-transparent background */
+  z-index: 9999; /* High z-index to stay on top */
 }
 #team{
   height:140vh;
@@ -401,12 +423,10 @@ align-items: center;
   margin-top: 2vh;
 }
 .drop_list{
-  position:fixed;
-  top:0;
-  right:0;
-  height: 100vh;
-  width:100%;
-  z-index:999;
+  
+  
+  
+  
   background-color: rgba(21, 21, 21, 0.5);
   display: flex;
   flex-direction: column;
@@ -417,14 +437,14 @@ align-items: center;
   border-radius: 16px; /* Rounded corners */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow */
   text-align: center;
-  z-index: 1000; /* Keeps it on top */
+  /* Keeps it on top */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: #0176B3 groove 8px;
- width: 90%;
- height:90%;
+ width: 90vh;
+ height:90vh;
  backdrop-filter: blur(20px);
    
 
@@ -444,14 +464,14 @@ align-items: center;
   color: #007bff;
   cursor: pointer;
 }
-#items{
+.items{
   font-size: 30px;
   font-family: "Red Hat Display";
-  margin: 3%;
+  margin: 5vh;
   cursor: pointer;
 }
   
-#items:hover{
+.items:hover{
   color:  #00a2fa;
   font-weight: 800;
 }
@@ -861,4 +881,28 @@ service-item .child {
 }
 .row{
   padding: 0vh;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }

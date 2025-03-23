@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {Reveal,Animate_1,Animate_2,Animate_3,Animate_4} from './AnimatedContent';
+import {Reveal,Animate_1,Animate_2,Animate_3,Animate_4,Animate_5} from './AnimatedContent';
 
 import './assets/css/bootstrap.min.css';
 
@@ -21,6 +21,61 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 1600 });
   }, []);
+  const handleClick = () => {
+    if(!isAnimationEnd) return;
+    setIsAnimationEnd(!isAnimationEnd);
+    setClickCount(true);
+    const elements = document.querySelectorAll(".items"); // Target all items
+    elements.forEach((element) => {
+      element.classList.remove("animate__fadeInDown");
+      element.classList.add("animate__fadeOutUp");
+    });
+    const parts=document.getElementById("cross");
+    parts.classList.remove("animate__fadeInRight");
+    parts.classList.add("animate__fadeOutRight");
+    const parts1=document.getElementById("pop");
+    parts1.classList.remove("animate__fadeInLeft");
+    parts1.classList.add("animate__fadeOutLeft");
+    
+    
+    
+  };
+  const [clickCount, setClickCount] = useState(false);
+  const [isAnimationEnd, setIsAnimationEnd] = useState(false);
+  const animationHandle= () =>{
+    
+     setIsAnimationEnd(!isAnimationEnd);
+     if(clickCount&&!isAnimationEnd) setIsOpen(!isOpen);
+    
+    
+  }
+  const looseClick = () => {
+    setIsAnimationEnd(false);
+    setClickCount(false);
+    const elements = document.querySelectorAll(".items"); // Target all items
+    elements.forEach((element) => {
+      element.classList.remove("animate__fadeOutUp");
+      element.classList.add("animate__fadeInUp");
+    });
+    const parts=document.getElementById("cross");
+    parts.classList.remove("animate__fadeOutRight");
+    parts.classList.add("animate__fadeInRight");
+    const parts1=document.getElementById("pop");
+    parts1.classList.remove("animate__fadeOutLeft");
+    parts1.classList.add("animate__fadeInLeft");
+    setIsOpen(!isOpen);
+    
+
+  };
+  const stopClick = () => {
+    
+    const part3=document.getElementById(".dropdown_open");
+    part3.style.display="none";
+    const part5=document.getElementById(".drop_list");
+    
+    
+
+  };
   // const ref=useRef(null);
   // const isInView=useInView(ref,{once:true});
   // const mainControls=useAnimation();
@@ -33,15 +88,11 @@ function App() {
   
   const [isOpen, setIsOpen] = useState(false);
 
-  const [key, setKey] = useState(0); // Key to force re-render
-  // const sectionRef = useRef(null);
 
-
-  const restartAnimation = () => {
-    setKey(Key => Key + 1); // Change key to remount component
-  };
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    
+    
   };
 
 
@@ -107,27 +158,38 @@ function App() {
           <button className="elements">
             Contact Us
           </button>
-          <div className="menu-toggle" onClick={toggleMenu} >
+          <div className="menu-toggle" onClick={looseClick} >
             ☰
           </div>
         </div>
 
       </div>
-      <div className={isOpen ? 'dropdown_open' : 'dropdown'}>
+      <div 
+  className={isOpen ? 'dropdown_open' : "dropdown"} 
+  
+>
+
       
-        <div id="menu_drop"> ☰</div>
+        
        
-        <div className='drop_list' onClick={toggleMenu}>
-        <img id="pop"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
-        <button id="cross"> ☰
+        <Animate_5  width="90%" delay={0}>
+        <div id='drop_list'>
+        <img id="pop" className="animate__animated animate__fadeInLeft"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
+        <button id="cross" className="animate__animated animate__fadeInRight"  onClick={handleClick}> ☰
         </button>
-          <p id="items">Home</p>
-          <p id="items">Infinitum</p>
-          <p id="items">Events</p>
-          <p id="items">Our Team</p>
-          <p id="items">Gallery</p>
+          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"0.3s"}}>Home</p>
+          <p className=' items animate__animated animate__fadeInDown' style={{animationDelay:"0.5s"}}>Infinitum</p>
+          <p className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1s"}}>Events</p>
+          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1.2s"}}>Our Team</p>
+          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1.5s"}}>Gallery</p>
+          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1.7s"}}>About Us</p>
+          <p  className=' items animate__animated animate__fadeInDown'onAnimationEnd={animationHandle} style={{animationDelay:"1.9s"}}>Contact Us</p>
         </div>
+         </Animate_5>
       </div>
+      
+
+     
 
 
       <img id="page1" src="./public/Component 7.svg" />

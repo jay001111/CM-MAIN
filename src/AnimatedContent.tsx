@@ -106,6 +106,44 @@ export const Animate_4 = ({ children, width = "fit-content", delay =0 }: Props) 
     </div>
   );
 };
+export const Animate_5 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "drop_list animate__animated animate__fadeIn" : ""}
+      style={{
+        width,
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+export const Animate_6 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = !useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "drop_list animate__animated animate__fadeRight" : ""}
+      style={{
+        width,
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 
 
