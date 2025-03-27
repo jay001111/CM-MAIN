@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {Reveal,Animate_1,Animate_2,Animate_3,Animate_4,Animate_5} from './AnimatedContent';
+import {Reveal,Animate_1,Animate_2,Animate_3,Animate_4,Animate_5,Animate_6,Animate_7,Animate_8,Animate_9,Animate_10,Animate_11} from './AnimatedContent';
 
 import './assets/css/bootstrap.min.css';
 
@@ -12,6 +12,7 @@ import './App.css';
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useInView } from 'framer-motion';
 
 
 
@@ -21,6 +22,27 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 1600 });
   }, []);
+  const [active, setActive] = useState("Home"); // Default active item
+  const viewNav=(sectionId) =>{
+    const element=document.getElementById(sectionId);
+    const isInView=useInView(element);
+    if(isInView){
+      if(sectionId="page2"){
+        const temp=document.getElementById("")
+      }
+    }
+  }
+  const buttonClick = (item,sectionId) => {
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    setActive(item); // Set clicked item as active
+  }
+  
+
+  const iconClick = (sectionId) => {
+    setIsOpen(!isOpen);
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    
+  }
   const handleClick = () => {
     if(!isAnimationEnd) return;
     setIsAnimationEnd(!isAnimationEnd);
@@ -67,6 +89,13 @@ function App() {
     
 
   };
+  const pressClick=(item1,elementId)=>{
+   
+    const ref = useRef(null);
+    const isInView = useInView(ref, { threshold: 0.5 });
+
+    if(isInView) document.getElementById("homee").className="elements-active ";
+  }
   const stopClick = () => {
     
     const part3=document.getElementById(".dropdown_open");
@@ -76,6 +105,18 @@ function App() {
     
 
   };
+  const [descriptionInView,setDescriptionInView]=useState(false);
+  const toggleDescrition=()=>{
+    setDescriptionInView(!descriptionInView);
+  }
+  const [descriptionInView1,setDescriptionInView1]=useState(false);
+  const toggleDescrition1=()=>{
+    setDescriptionInView(!descriptionInView1);
+  }
+  const [descriptionInView3,setDescriptionInView3]=useState(false);
+  const toggleDescrition3=()=>{
+    setDescriptionInView(!descriptionInView3);
+  }
   // const ref=useRef(null);
   // const isInView=useInView(ref,{once:true});
   // const mainControls=useAnimation();
@@ -85,7 +126,14 @@ function App() {
   //   }
   // },[isInView]);
 
-  
+  const timer = setTimeout(() => {
+    setVisible(false);
+  }, 5000);
+  const [visible, setVisible] = useState(true);
+  const timer1 = setTimeout(() => {
+    setVisible1(false);
+  }, 6000);
+  const [visible1, setVisible1] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
 
@@ -121,6 +169,13 @@ function App() {
 
   return (
     <>
+    
+    <div id="preloader-backdrop" className={visible1?"":"none-dis"}>
+      
+     <div id="preloader" className={visible?"":"animate__animated animate__fadeOut"}>
+     </div>
+     </div>
+
       <div className={isOpen ? "nav_core_open" : "nav_core"} >
         <div id="logo1">
           <img src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
@@ -128,34 +183,72 @@ function App() {
         </div>
 
 
+      <div id="infi-desc" className={descriptionInView?"opene animate__animated animate__fadeIn":"closer"}>
+      <button id="cross"   onClick={toggleDescrition}> &times;  
+        
+      </button>
+      <div id="description1">
+      <Animate_6 delay={0}>
+          <b>About Infi</b><br />
+          </Animate_6>
+          <Animate_6 delay={0.3}>
+          <p><strong>Infi</strong>, organized by <strong>Club Mathematica, NIT Calicut</strong>, is more than just a math exam—it's a journey that celebrates mathematical curiosity and critical thinking among school students. It offers young minds a platform to challenge themselves and explore the beauty of numbers, logic, and problem-solving.</p>
+          </Animate_6>
+          <Animate_6 delay={0.5}>
+          <p>Through thought-provoking questions and innovative problem sets, <strong>Infi</strong> inspires students to push boundaries and discover the joy of learning beyond the classroom. It’s not just a test; it's an experience designed to ignite a passion for mathematics.</p>
+          </Animate_6>
+          <Animate_6 delay={0.7}>
+          <p>With each edition of <strong>Infi</strong>, we aim to create a community where budding mathematicians can unravel complex concepts, compete with peers, and conquer new challenges with confidence.</p>
+          </Animate_6>
+          <Animate_6 delay={0.9}>
+          <p><strong>Motto:</strong> <em>Unravel. Explore. Excel.</em></p>
+          </Animate_6>
+    </div>
+        </div>
+        <div id="infi-desc" className={descriptionInView1?"opener animate__animated animate__fadeIn":"closer"}>
+      <button id="cross"   onClick={toggleDescrition1}> &times;  
 
+      </button>
+        </div>
+        <div id="infi-desc" className={descriptionInView3?"opener animate__animated animate__fadeIn":"closer"}>
+      <button id="cross"   onClick={toggleDescrition3}> &times;  
+
+      </button>
+        </div>
 
 
 
         <div className={isOpen ? "nav-menuopen" : "nav-menu"}>
 
 
-          <p className={isOpen ? "elements_open" : "elements"}> Home  </p>
+          <p  className={active === "clicked" ? "elements-active elements-active-2" : "elements"}
+            onClick={() => buttonClick("clicked","page1")}> Home  </p>
 
 
-          <p className="elements">Infinitum  </p>
+          <p className={active === "infi-click" ? "elements-active" : "elements"}
+            onClick={() => buttonClick("infi-click",)}>Infinitum  </p>
 
 
-          <p className="elements">Events  </p>
+          <p className={active === "event-clicked" ? "elements-active" : "elements"}
+            onClick={() => buttonClick("event-clicked","events_")}>Events  </p>
 
 
-          <p className="elements">Our Team </p>
+          <p className={active === "team-click" ? "elements-active" : "elements"}
+            onClick={() => buttonClick("team-click")}>Our Team </p>
 
 
-          <p className="elements">Gallery  </p>
+          <p className={active === "gallery-clicked" ? "elements-active" : "elements"}
+            onClick={() => buttonClick("gallery-clicked","event")}>Gallery  </p>
 
 
-          <button className="elements">
+          <button className={active === "about-clicked" ? "buttons" : "buttons"}
+            onClick={() => buttonClick("about-clicked","the_club")}>
             About Us
           </button>
 
 
-          <button className="elements">
+          <button className={active === "contact-clicked" ? "buttons" : "buttons"}
+            onClick={() => buttonClick("contact-clicked","last_")}>
             Contact Us
           </button>
           <div className="menu-toggle" onClick={looseClick} >
@@ -177,13 +270,19 @@ function App() {
         <img id="pop" className="animate__animated animate__fadeInLeft"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
         <button id="cross" className="animate__animated animate__fadeInRight"  onClick={handleClick}> ☰
         </button>
-          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"0.3s"}}>Home</p>
-          <p className=' items animate__animated animate__fadeInDown' style={{animationDelay:"0.5s"}}>Infinitum</p>
-          <p className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1s"}}>Events</p>
-          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1.2s"}}>Our Team</p>
-          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1.5s"}}>Gallery</p>
-          <p  className=' items animate__animated animate__fadeInDown' style={{animationDelay:"1.7s"}}>About Us</p>
-          <p  className=' items animate__animated animate__fadeInDown'onAnimationEnd={animationHandle} style={{animationDelay:"1.9s"}}>Contact Us</p>
+        <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.3s" }} onClick={() => iconClick("page1")}>Home</p>
+
+<p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.5s" }} onClick={() => iconClick("infi_click")}>Infinitum</p>
+
+<p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "1s" }} onClick={() => iconClick("events_")}>Events</p>
+
+<p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "1.2s" }} onClick={() => iconClick("team_click")}>Our Team</p>
+
+<p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "1.5s" }} onClick={() => iconClick("event")}>Gallery</p>
+
+<p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "1.7s" }} onClick={() => iconClick("the_club")}>About Us</p>
+
+<p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "1.9s" }} onClick={() => iconClick("last_")} onAnimationEnd={animationHandle}>Contact Us</p>
         </div>
          </Animate_5>
       </div>
@@ -193,30 +292,52 @@ function App() {
 
 
       <img id="page1" src="./public/Component 7.svg" />
-
-      <img id="page2" src="./public/Component 5.svg" />
+      <h1
+                className="section-title wow fadeInUp cluboutlooks animated"
+                data-wow-delay="0.2s"
+                id="the_club"
+                style={{ visibility: "visible", animationDelay: "0.2s" }}
+              >
+                <span id="Club">THE</span> CLUB
+              </h1>
+    <div className='about'>
+      <Animate_8 delay={0.3}>
+      <img id="page2" src="./public/Component 10.svg" />
+      </Animate_8>
 
 
 
       <div id="pics">
+        <Animate_9>
         <p id="description">
+        <Animate_6 delay={0}>
           <b>About C M</b><br />
-          <p>At <strong>Club Mathematica, NIT Calicut</strong>, we believe that mathematics is more than just numbers—it’s a language of patterns, a tool for innovation, and a bridge between logic and creativity. As a vibrant cultural club, we create a dynamic space where intellectual curiosity meets exhilarating competition.</p>
-
+          </Animate_6>
+          <Animate_6 delay={0.3}>
+          <p>At <strong>Club Mathematica, NIT Calicut</strong> we believe that mathematics is more than just numbers—it’s a language of patterns, a tool for innovation, and a bridge between logic and creativity. As a vibrant cultural club, we create a dynamic space where intellectual curiosity meets exhilarating competition.</p>
+          </Animate_6>
+          <Animate_6 delay={0.5}>
           <p>Through engaging events, challenging puzzles, and thrilling contests, we inspire students to embrace problem-solving, strategic thinking, and the sheer joy of discovery. Our club thrives on the spirit of collaboration, learning, and the relentless pursuit of excellence. Whether you’re a math enthusiast, a puzzle solver, or just someone who loves a good challenge, <strong>Club Mathematica</strong> is where you belong.</p>
-
+          </Animate_6>
+          <Animate_6 delay={0.7}>
           <p>Join us in celebrating the beauty of mathematics beyond textbooks—where logic meets culture, and knowledge turns into an adventure!</p>
-
+          </Animate_6>
+          <Animate_6 delay={0.9}>
           <p><strong>Motto:</strong> <em>Unravel. Compete. Conquer.</em></p>
-
+          </Animate_6>
+        
 
         </p>
+        </Animate_9>
+        <Animate_7 delay={1}>
         <div id="infi_flex">
           <img id="infi" src="./public/Component 4.svg" />
           <button className="site">Visit Site</button>
         </div>
+        </Animate_7>
+        </div>
       </div>
-   
+     
       <div id="team">
     
         <div id="event">
@@ -260,6 +381,20 @@ function App() {
           <div id="event_title">
             <span id="our1"><b>EVENTS</b></span>
             <span id="events1"><b>'2024&25</b></span>
+
+          </div>
+          <div id="container-head">
+          <div id="event-container">
+            <Animate_8 width="100%" delay={0}>
+          <div className='event-boxes' onClick={toggleDescrition}></div>
+          </Animate_8>
+          <Animate_11 width="100%" delay={0.3}>
+          <div className='event-boxes' onClick={toggleDescrition1}></div>
+          </Animate_11>
+          <Animate_10 width="100%">
+          <div className='event-boxes' onClick={toggleDescrition3}></div>
+          </Animate_10>
+          </div>
           </div>
         </div>
       </div>
@@ -329,7 +464,7 @@ function App() {
               <div className="icon">
                 <i className="lni lni-pencil-alt"></i>
               </div>
-              <div className="services-content">
+              <div id="last_"className="services-content">
                 <h3><a href="#">Articulate content writers</a></h3>
               </div>
             </div>
@@ -344,7 +479,7 @@ function App() {
           <div className="row justify-content-center">
             <div className="col-12">
               <div className="section-title-header text-center">
-                <h1 className="section-title wow fadeInUp contactuss" data-wow-delay="0.2s">Contact Us</h1>
+                <h1 id="form-head"className="section-title wow fadeInUp contactuss" data-wow-delay="0.2s">Contact Us</h1>
               </div>
             </div>
             <div className="col-lg-7 col-md-12 col-xs-12">
@@ -445,31 +580,56 @@ function App() {
   </div>
 </section>
 
-      <div id="footer">
-        <img id="logo" src="./public/Component 9.svg" />
-        <p id="quick">
-          <h3>Quick Links</h3>
+<section className="footer-distributed">
+  <div className="footer-left">
+    <img onClick={() => buttonClick(undefined, "page1")}id="footer-logo"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg"  alt="Club Mathematica Logo" />
+    <img id="nitc-logo"src="./public/nit.png" />
+    {/* Footer menu */}
+    <p className="footer-links">
+  <a href="#" onClick={() => buttonClick(undefined, "page1")}>Home</a> ·
+  <a href="#events" onClick={() => buttonClick(undefined, "events_")}>Events</a> ·
+  <a href="#gallery" onClick={() => buttonClick(undefined, "event")}>Gallery</a> ·
+  <a href="#infinitum" onClick={() => buttonClick(undefined, "infi_click")}>Infinitum</a> ·
+  <a href="#contact-us" onClick={() => buttonClick(undefined, "last_")}>Contact Us</a> ·
+  <a href="#about-us" onClick={() => buttonClick(undefined, "the_club")}>About Us</a>
+</p>
 
-          <h4>Home</h4>
-          <h4>Infinitum</h4>
-          <h4>Events</h4>
-          <h4>Our Team</h4>
-          <h4>Gallery</h4>
-        </p>
-        <p id="credits">
-          <h3>Contact Us</h3>
+    <p className="footer-company-name">Club Mathematica &copy; 2025</p>
+  </div>
 
-          <h4>Phone:</h4>
-          <h5>+919778112422</h5>
-          <h4>Email:</h4>
-          <h5>clubmath@nitc.ac.in</h5>
-          <h4>Follow Us On:</h4>
-          <div id="icons">
-            <img id="icon1" src="insta.svg" />
-            <img id="icon2" src="facebook.svg" />
-          </div>
-        </p>
-      </div>
+  <div className="footer-center">
+    {/* Contact details */}
+    <div>
+      <i className="fa fa-map-marker"></i>
+      <p><span>NIT Calicut</span> Calicut, Kerala</p>
+    </div>
+    {/* <div>
+      <i className="fa fa-phone"></i>
+      <p>9999999999</p>
+    </div> */}
+    <div>
+      <i className="fa fa-envelope"></i>
+      <p><a href="mailto:clubmath@nitc.ac.in">clubmath@nitc.ac.in</a></p>
+    </div>
+  </div>
+
+  <div className="footer-right">
+    {/* Description */}
+    <p className="footer-company-about">
+      <span>Club Mathematica</span> Cultural Club at NIT Calicut, Since early 2000s. Provides platform in math and
+      logical reasoning to help build student's imaginative powers.
+    </p>
+    {/* Links to social media */}
+    <div className="footer-icons">
+      <a href="https://www.facebook.com/clubmathematica/"><i className="fa fa-facebook"></i></a>
+      {/* <a href="#"><i className="fa fa-twitter"></i></a> */}
+      <a href="https://instagram.com/clubmathematica?igshid=538ktyxsygtp"><i className="fa fa-instagram"></i></a>
+      {/* <a href="#"><i className="fa fa-linkedin"></i></a> */}
+      <a href="https://www.behance.net/ClubMathematicaNITC"><i className="fa fa-behance"></i></a>
+    </div>
+  </div>
+</section>
+
 
     </>
 

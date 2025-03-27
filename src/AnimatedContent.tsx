@@ -127,12 +127,114 @@ export const Animate_5 = ({ children, width = "fit-content", delay =0 }: Props) 
 };
 export const Animate_6 = ({ children, width = "fit-content", delay =0 }: Props) => {
   const ref = useRef(null);
-  const isInView = !useInView(ref);
+  const isInView = useInView(ref);
 
   return (
     <div
       ref={ref}
-      className={isInView ? "drop_list animate__animated animate__fadeRight" : ""}
+      className={isInView ? "animate__animated animate__fadeInLeft" : ""}
+
+      style={{
+        width,
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+export const Animate_7 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "animate__animated animate__flipInX" : ""}
+
+      style={{
+        width,
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+export const Animate_8 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "animate__animated animate__fadeInLeft" : ""}
+      id="page2"
+      style={{
+        width,
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+export const Animate_9 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "animate__animated animate__fadeInRight " : ""}
+
+      style={{
+        width,
+        
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+export const Animate_10 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "animate__animated animate__fadeInRight " : ""}
+      id="page2"
+      style={{
+        width,
+        opacity: isInView ? 1 : 0, 
+        transition: `opacity 0.5s ease-in-out `, // Apply delay
+        animationDelay:`${delay}s`
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+export const Animate_11 = ({ children, width = "fit-content", delay =0 }: Props) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  return (
+    <div
+      ref={ref}
+      className={isInView ? "animate__animated animate__fadeIn" : ""}
+      id="page2"
       style={{
         width,
         opacity: isInView ? 1 : 0, 
