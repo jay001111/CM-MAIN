@@ -111,11 +111,11 @@ function App() {
   }
   const [descriptionInView1,setDescriptionInView1]=useState(false);
   const toggleDescrition1=()=>{
-    setDescriptionInView(!descriptionInView1);
+    setDescriptionInView1(!descriptionInView1);
   }
   const [descriptionInView3,setDescriptionInView3]=useState(false);
   const toggleDescrition3=()=>{
-    setDescriptionInView(!descriptionInView3);
+    setDescriptionInView3(!descriptionInView3);
   }
   // const ref=useRef(null);
   // const isInView=useInView(ref,{once:true});
@@ -178,12 +178,12 @@ function App() {
 
       <div className={isOpen ? "nav_core_open" : "nav_core"} >
         <div id="logo1">
-          <img src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
+          <img id="cm-logo"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
           <p id="name"><span id="club">CLUB</span> <span>MATHEMATICA</span></p>
         </div>
 
 
-      <div id="infi-desc" className={descriptionInView?"opene animate__animated animate__fadeIn":"closer"}>
+      <div id="infi-desc" className={descriptionInView?"opener animate__animated animate__fadeIn":"closer"}>
       <button id="cross"   onClick={toggleDescrition}> &times;  
         
       </button>
@@ -203,17 +203,56 @@ function App() {
           <Animate_6 delay={0.9}>
           <p><strong>Motto:</strong> <em>Unravel. Explore. Excel.</em></p>
           </Animate_6>
+          <button className="site2">Visit Site</button>
     </div>
         </div>
         <div id="infi-desc" className={descriptionInView1?"opener animate__animated animate__fadeIn":"closer"}>
       <button id="cross"   onClick={toggleDescrition1}> &times;  
 
       </button>
+      <div id="description1"> 
+      <Animate_6 delay={1.1}>
+  <p>Conducted as part of <strong>Tathva '24</strong>, South India's largest techno-management fest, <strong>LOGIQ</strong> was an electrifying contest designed to test quick thinking and strategic decision-making.</p>
+</Animate_6>
+
+<Animate_6 delay={1.3}>
+  <p><strong>The event was structured into two rounds:</strong></p>
+  <ul className="list-disc pl-5">
+    <li><strong>Preliminary Round:</strong> Teams competed to qualify for the final showdown.</li>
+    <li><strong>Final Round:</strong> The top-performing teams faced off in an intense battle of intellect.</li>
+  </ul>
+</Animate_6>
+
+<Animate_6 delay={1.5}>
+  <p><strong>LOGIQ</strong> successfully challenged participants to push their mental limits, where brilliance met fun. The event was a resounding success, with students showcasing exceptional problem-solving abilities and quick thinking.</p>
+</Animate_6>
+      </div>
         </div>
         <div id="infi-desc" className={descriptionInView3?"opener animate__animated animate__fadeIn":"closer"}>
       <button id="cross"   onClick={toggleDescrition3}> &times;  
 
       </button>
+      <div id="description1">
+      <Animate_6 delay={0}>
+ 
+</Animate_6>
+
+<Animate_6 delay={0.3}>
+<Animate_6 delay={0.2}>
+  <p><strong>Felizora</strong> was a thrilling Christmas-themed logical treasure hunt where participants embarked on a battle of wits and strategy to retrieve stolen gifts and reclaim the festive joy.</p>
+</Animate_6>
+  <p><strong>Club Mathematica</strong> presented <strong>Game Night</strong> — an evening filled with laughter, excitement, and unforgettable memories. The event celebrated the achievements of the <strong>Felizora winners</strong> and honored the <strong>Game Night champions</strong>, recognizing their brilliance and enthusiasm.</p>
+</Animate_6>
+
+<Animate_6 delay={0.6}>
+  <p>With dazzling lights and vibrant rhythms, the night captured the spirit of the festive season in a truly unique Christmas ambiance. One of the highlights was the much-anticipated <strong>Christmas Friend</strong> reveal, which brought surprise and joy to everyone.</p>
+</Animate_6>
+
+<Animate_6 delay={0.9}>
+  <p>The magic truly began the moment guests stepped in — it was a celebration to remember.</p>
+</Animate_6>
+
+      </div>
         </div>
 
 
@@ -265,7 +304,7 @@ function App() {
       
         
        
-        <Animate_5  width="90%" delay={0}>
+        <Animate_5  width="50vw" delay={0}>
         <div id='drop_list'>
         <img id="pop" className="animate__animated animate__fadeInLeft"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
         <button id="cross" className="animate__animated animate__fadeInRight"  onClick={handleClick}> ☰
@@ -291,7 +330,16 @@ function App() {
      
 
 
-      <img id="page1" src="./public/Component 7.svg" />
+      <div id="main-pic">
+        <div id="blur">
+      <div className="carousel-caption d-md-block">
+      <div className="sign hey">
+  <span className="fast-flicker">C</span>lubMat<span className="flicker">he</span>matica
+</div>
+</div>
+</div>
+
+      </div>
       <h1
                 className="section-title wow fadeInUp cluboutlooks animated"
                 data-wow-delay="0.2s"
@@ -302,7 +350,7 @@ function App() {
               </h1>
     <div className='about'>
       <Animate_8 delay={0.3}>
-      <img id="page2" src="./public/Component 10.svg" />
+      
       </Animate_8>
 
 
@@ -325,20 +373,22 @@ function App() {
           <Animate_6 delay={0.9}>
           <p><strong>Motto:</strong> <em>Unravel. Compete. Conquer.</em></p>
           </Animate_6>
+          <Animate_7 delay={1}>
+        <div id="infi_flex">
+          <img id="infi" src="./public/Component 11.svg" />
+          <img id="infi1" src="./public/Component 3 (1).svg" />
+          <button className="site">Visit Site</button>
+        </div>
+        </Animate_7>
         
 
         </p>
         </Animate_9>
-        <Animate_7 delay={1}>
-        <div id="infi_flex">
-          <img id="infi" src="./public/Component 4.svg" />
-          <button className="site">Visit Site</button>
-        </div>
-        </Animate_7>
+   
         </div>
       </div>
      
-      <div id="team">
+      {/* <div id="team">
     
         <div id="event">
 
@@ -363,26 +413,18 @@ function App() {
           <Animate_2 width="100%" delay={1.1}>
           <div className="box"></div>
           </Animate_2>
-          <Animate_2 width="100%" delay={0.2}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={0.6}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={1.1}>
-          <div className="box"></div>
-          </Animate_2>
+      
         </div>
 
-      </div>
+      </div> */}
       
       <div id="events_">
         <div id="black-sheet">
-          <div id="event_title">
+          {/* <div id="event_title">
             <span id="our1"><b>EVENTS</b></span>
             <span id="events1"><b>'2024&25</b></span>
 
-          </div>
+          </div> */}
           <div id="container-head">
           <div id="event-container">
             <Animate_8 width="100%" delay={0}>
@@ -582,8 +624,9 @@ function App() {
 
 <section className="footer-distributed">
   <div className="footer-left">
-    <img onClick={() => buttonClick(undefined, "page1")}id="footer-logo"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg"  alt="Club Mathematica Logo" />
-    <img id="nitc-logo"src="./public/nit.png" />
+    
+    <img id="nitc-logo"src="./public/logo.png" />
+
     {/* Footer menu */}
     <p className="footer-links">
   <a href="#" onClick={() => buttonClick(undefined, "page1")}>Home</a> ·
