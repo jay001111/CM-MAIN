@@ -349,15 +349,15 @@ function App() {
                 <span id="Club">THE</span> CLUB
               </h1>
     <div className='about'>
-      <Animate_8 delay={0.3}>
-      
+    <Animate_8 delay={0.3}>
+      <img id="pic"src="Component 10.svg"/>
       </Animate_8>
 
 
-
+      <Animate_9 >
       <div id="pics">
-        <Animate_9>
-        <p id="description">
+       
+        <div id="description">
         <Animate_6 delay={0}>
           <b>About C M</b><br />
           </Animate_6>
@@ -373,22 +373,23 @@ function App() {
           <Animate_6 delay={0.9}>
           <p><strong>Motto:</strong> <em>Unravel. Compete. Conquer.</em></p>
           </Animate_6>
-          <Animate_7 delay={1}>
+    
+          <Animate_7 width="100%" delay={1}>
         <div id="infi_flex">
-          <img id="infi" src="./public/Component 11.svg" />
-          <img id="infi1" src="./public/Component 3 (1).svg" />
+          
+          <img id="infi1" src="./public/Component 4.svg" />
           <button className="site">Visit Site</button>
         </div>
         </Animate_7>
-        
 
-        </p>
-        </Animate_9>
+        </div>
+       
    
         </div>
+        </Animate_9>
       </div>
      
-      {/* <div id="team">
+      <div id="team">
     
         <div id="event">
 
@@ -416,7 +417,7 @@ function App() {
       
         </div>
 
-      </div> */}
+      </div>
       
       <div id="events_">
         <div id="black-sheet">

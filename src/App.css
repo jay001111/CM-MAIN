@@ -75,34 +75,34 @@
   margin-left: 0vh;
 }
 .about{
-  display: grid;
-  grid-template-columns: auto auto;
+display: grid;
+
+grid-template-columns: auto auto;
 }
 @media(max-width:1256px){
-  .about{
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-  }
+
   #description{
-    margin-top: 5vh;
+    margin-top: 0vh;
+    width: 80vw !important;
+      margin-bottom: 3vh !important;
 
   }
+
   #infi_flex{
-    width:100vw !important;
+    width:100% !important;
     justify-content: space-around;
     align-items: center;
   }
   #page2{
     display: none !important;
   }
+  .about{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 }
-#pics{
-  display:flex;
-  width: 10%;
-  flex-direction: column;
 
-}
 b,strong{
   color:#0176B3;
 }
@@ -112,12 +112,13 @@ b,strong{
   background-color:   rgba(0, 0, 0, 0.7);
   border: groove #0176B3 6px;
   box-shadow: 0 0 20px#0176B3;
-  padding: 3vh;
+  padding: 5vh;
   border-radius:2vh ;
-  width: 100vw;
+  width:50vw;
+  
   /* overflow-wrap: break-word;
   word-wrap: break-word; */
-  width: 100vw;  float:left;
+ float:left;
   font-family: "Red Hat Display";
   line-height: 4vh;
   font-size:large;
@@ -136,6 +137,7 @@ b,strong{
   float:left;
   margin-left: 10vh;
   margin-top: 2.9vh;
+  margin-right: 2vh;
  
 }
 .site2{
@@ -167,10 +169,11 @@ b,strong{
 }
 #infi1 {
   width: 40vh;
-  backdrop-filter: blur(20px);
+ 
  
   padding: 3vh;
 }
+
 #infi_flex{
   margin-top: 3vh;
   display: flex;
@@ -180,6 +183,7 @@ b,strong{
   border-radius: 5px;
   justify-content: space-around;
   background-color:#000000;
+
 
 }
 #main-pic{
@@ -218,11 +222,11 @@ margin-top: none;
   margin-left: 10vh;
 }
 #the_club{
-  margin-bottom: 10vh;
+  margin-bottom: 8vh;
 }
 #head{
   color: #ffffff;
-  font-size:3vw;
+  font-size:4vh;
 }
 #footer_bot{
 background-color: #0F0F0F;  
@@ -697,11 +701,44 @@ font-size: 23px !important;
     height:7vh !important;
   }
 }
+#pic{
+
+  margin-top: 4vh;
+  height: 80vh;
+}
+@media(max-width:900px){
+  .drop_list{
+    top: 50%!important;
+    left: 50% !important;
+    height:70vh !important;
+  }
+  .items{
+    margin: 3vh !important ;
+  }
+}
 @media(max-width:450px){
   
   #cm-logo{
     height:5vh !important;
     margin-top: 1.9vh !important;
+  }
+  #infi1{
+    width:60vw !important;
+  }
+  .site{
+    font-size: 3vw;
+   
+    width: 70%;
+    width: 50%;
+    padding: 0.5vh;
+    margin-bottom: 2vh;
+    margin-left: 0vh;
+    margin-top: 0vh;
+  }
+
+  #head{
+    color: #ffffff;
+    font-size:4vw;
   }
   #name{
     margin-bottom: 3vh !important;
@@ -718,13 +755,62 @@ font-size: 23px !important;
     margin-bottom: 2vh !important;
     font-size: 2.5vh !important;
   }
+  #pics{
+  
+  }
+  #pic{
+    display: none !important;
+  }
   .drop_list{
-    top: 45% !important;
-    left: 36% !important;
-    height:60vh;
+    top: 45%!important;
+    left: 45% !important;
+    height:50vh !important;
   }
   .items{
-    font-size: 2.3vw;
+    font-size: 2.3vw !important;
+  }
+  #description{
+    font-size:3vw;
+    width:80vw !important;
+    
+  }
+  #the_club{
+    font-size: 6vw ;
+  }
+  .section-title{
+    font-size: 6vw !important;
+  }
+  #form-submit{
+    font-size: 3vw !important;
+  }
+ 
+  #infi_flex{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+}
+@media(max-width:1200px){
+  #infi1{
+    width:40vw;
+  }
+  .site{
+    font-size: 2.2vw;
+   
+    
+    width: 50%;
+    padding: 0.5vh;
+    margin-bottom: 2vh;
+    margin-left: 0vh;
+    margin-top: 0vh;
+  }
+   
+  #infi_flex{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
   }
 }
 .dropdown{
@@ -905,8 +991,8 @@ display: none;
   left: 50%;
   transform: translate(-50%, -50%);
   border: #0176B3 groove 8px;
- width: 90vw;
- height:90vh;
+ width: 100vw;
+ height:70vh;
  backdrop-filter: blur(20px);
  box-shadow: 0 0 20px#38b1f2;
    
@@ -983,8 +1069,7 @@ body {
 }
 
 .section-title {
-  margin-top:30px;
-  margin-bottom:30px;
+
   font-size: 45px;
   color: #0176B3;
   line-height: 52px;
