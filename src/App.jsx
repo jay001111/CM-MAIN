@@ -261,7 +261,7 @@ function App() {
 
 
           <p  className={active === "clicked" ? "elements-active elements-active-2" : "elements"}
-            onClick={() => buttonClick("clicked","page1")}> Home  </p>
+            onClick={() => buttonClick("clicked","signs")}> Home  </p>
 
 
           <p className={active === "infi-click" ? "elements-active" : "elements"}
@@ -309,7 +309,7 @@ function App() {
         <img id="pop" className="animate__animated animate__fadeInLeft"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
         <button id="cross" className="animate__animated animate__fadeInRight"  onClick={handleClick}> ☰
         </button>
-        <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.3s" }} onClick={() => iconClick("page1")}>Home</p>
+        <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.3s" }} onClick={() => iconClick("signs")}>Home</p>
 
 <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.5s" }} onClick={() => iconClick("infi_click")}>Infinitum</p>
 
@@ -333,7 +333,7 @@ function App() {
       <div id="main-pic">
         <div id="blur">
       <div className="carousel-caption d-md-block">
-      <div className="sign hey">
+      <div id="signs" className="sign hey">
   <span className="fast-flicker">C</span>lubMat<span className="flicker">he</span>matica
 </div>
 </div>
@@ -358,7 +358,7 @@ function App() {
       <div id="pics">
        
         <div id="description">
-        <Animate_6 delay={0}>
+         <Animate_6 delay={0}>
           <b>About C M</b><br />
           </Animate_6>
           <Animate_6 delay={0.3}>
@@ -389,53 +389,25 @@ function App() {
         </Animate_9>
       </div>
      
-      <div id="team">
-    
-        <div id="event">
 
-          <b>GALLERIA</b>
-        </div>
-        <div id="boxes">
-        <Animate_2 width="100%" delay={0.2}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={0.6}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={1.1}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={0.2}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={0.6}>
-          <div className="box"></div>
-          </Animate_2>
-          <Animate_2 width="100%" delay={1.1}>
-          <div className="box"></div>
-          </Animate_2>
-      
-        </div>
-
-      </div>
       
       <div id="events_">
         <div id="black-sheet">
-          {/* <div id="event_title">
+          <div id="event_title">
             <span id="our1"><b>EVENTS</b></span>
             <span id="events1"><b>'2024&25</b></span>
 
-          </div> */}
+          </div>
           <div id="container-head">
           <div id="event-container">
             <Animate_8 width="100%" delay={0}>
-          <div className='event-boxes' onClick={toggleDescrition}></div>
+          <div className='event-boxes' id="ket1"onClick={toggleDescrition}></div>
           </Animate_8>
           <Animate_11 width="100%" delay={0.3}>
-          <div className='event-boxes' onClick={toggleDescrition1}></div>
+          <div className='event-boxes' id="ket2"onClick={toggleDescrition1}></div>
           </Animate_11>
           <Animate_10 width="100%">
-          <div className='event-boxes' onClick={toggleDescrition3}></div>
+          <div className='event-boxes' id="ket3" onClick={toggleDescrition3}></div>
           </Animate_10>
           </div>
           </div>
@@ -630,7 +602,7 @@ function App() {
 
     {/* Footer menu */}
     <p className="footer-links">
-  <a href="#" onClick={() => buttonClick(undefined, "page1")}>Home</a> ·
+  <a href="#" onClick={() => buttonClick(undefined, "signs")}>Home</a> ·
   <a href="#events" onClick={() => buttonClick(undefined, "events_")}>Events</a> ·
   <a href="#gallery" onClick={() => buttonClick(undefined, "event")}>Gallery</a> ·
   <a href="#infinitum" onClick={() => buttonClick(undefined, "infi_click")}>Infinitum</a> ·

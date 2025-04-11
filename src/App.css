@@ -191,6 +191,8 @@ b,strong{
   height: 100vh;
   width: 100%;background-position: 50% 50%;
   backdrop-filter: blur(10px);
+  background-repeat: no-repeat;
+ 
 }
 .deco{
   width: 100%;
@@ -579,7 +581,7 @@ font-size: 23px !important;
 
 
 /* Show menu button on small screens */
-@media (max-width: 1339px) {
+@media (max-width: 1450px) {
   .menu-toggle {
       display: inline;
       margin-right: 4vh !important;
@@ -646,16 +648,22 @@ font-size: 23px !important;
 }
 }
 
-@media (max-width:1264px){
+@media (max-width:1300px){
   #event-container{
     flex-direction: column;
+    margin-top: 50vh;
   }
   #black-sheet{
-    height: 220vh !important;
+    height: 250vh !important;
+    
 
   }
+  #pic{
+    display: none !important;
+  }
   #events_{
-    height:250vh !important;
+    height: 250vh !important ;
+  
   }
 }
 @media  (max-width:1290px){
@@ -668,7 +676,7 @@ font-size: 23px !important;
 }
 @media (max-width: 1028px) { 
   #team{
-    height: 200vh !important;
+    height: 270vh !important;
   }
   #boxes {
     grid-template-columns: repeat(1,1fr) !important; /* Stack into 1 column */
@@ -704,7 +712,7 @@ font-size: 23px !important;
 #pic{
 
   margin-top: 4vh;
-  height: 80vh;
+  height: 40vw;
 }
 @media(max-width:900px){
   .drop_list{
@@ -716,8 +724,40 @@ font-size: 23px !important;
     margin: 3vh !important ;
   }
 }
+
 @media(max-width:450px){
+  #event-container{
+    flex-direction: column;
+    margin-top: 18vh;
+  }
+ 
+    #events_{
+      height: 300vw !important;
+    
+    }
   
+  #black-sheet{
+    height: 150vh !important;
+    
+
+  }
+
+  #infi-desc{
+    top: 50%;
+left: 50% !important;
+height: 70vh !important;
+  }
+  .event-boxes{
+  
+    
+    height:60vw !important;
+    width:50vw !important;
+    margin: 3vh;
+   
+    
+    border: groove #0176B3 5px ;
+    box-shadow: 0 0 80px #0176B3;
+  }
   #cm-logo{
     height:5vh !important;
     margin-top: 1.9vh !important;
@@ -780,9 +820,20 @@ font-size: 23px !important;
   .section-title{
     font-size: 6vw !important;
   }
+  #our1{
+    font-size: 8vw !important;
+  }
+  #events1{
+    font-size: 8vw !important;
+  }
   #form-submit{
     font-size: 3vw !important;
   }
+  #ket1{
+ 
+
+  }
+  #event_title{}
  
   #infi_flex{
     flex-direction: column;
@@ -904,6 +955,7 @@ display: none;
   width: 90%; /* Keeps grid width responsive */
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10vh;
 }
 /* #boxes:hover{
   grid-template-columns: auto auto auto ;
@@ -917,10 +969,11 @@ display: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5vh;
 }
 #black-sheet{
-  height: 110vh;
-  width: 90%;
+  height: 60vw;
+  width: 95%;
   
   background-color:  #000000;
 }
@@ -1701,21 +1754,22 @@ service-item .child {
   }
   
   .event-boxes{
-    height:60vh;
-    width:50vh;
-    
+    height:55vh;
+    width:40vh;
+    margin: 3vh;
    
     
-    border: double #0176B3 3px ;
-    box-shadow: 0 0 20px #0176B3;
+    border: groove #0176B3 5px ;
+    box-shadow: 0 0 80px #0176B3;
     
   }
   #container-head{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 17vh;
+
     width: 100%;
+
   }
   .event-boxes:hover{
     transition: transform,box-shadow0.5s ease;
@@ -1757,7 +1811,27 @@ service-item .child {
   text-align: justify;
   color:#ffffff;
     margin: 16vh;
-    line-height: 6vh;
+    line-height: 6vh ;    
+  }
+  @media(max-width:1380px){
+    #description1{
+      font-size: 1.5vw !important;line-height: 3.5vw !important;
+      margin: 3vh !important;
+      padding: 3vh;
+    }
+  }
+  @media(max-width:750px){
+    #description1{
+      font-size: 2.5vw !important;line-height: 3vw !important;
+      margin: 3vh !important;
+      padding: 3vh;
+    }
+  }
+  @media(max-width:470px){
+    #description1{
+      font-size: 3.0vw !important;line-height: 4.5vw !important;
+      margin: 3vh !important;
+    }
   }
   #infi-desc{
     position: fixed; /* Stays in the same position on scroll */
@@ -1766,13 +1840,58 @@ left: 50%;
 transform: translate(-50%, -50%); /* Centers the element */
 width: 80vw; /* 80% of the viewport width */
 height: 80vh; /* 80% of the viewport height */
-backdrop-filter: blur(20px); /* Adds blur effect */
+backdrop-filter: blur(130px); /* Adds blur effect */
 z-index: 9999; /* Ensures it's on top */
 box-shadow:0 0 40px #0176B3;
 border: groove 4px #0176B3;
 
 
   }
+  #ket1{
+    background: url("./public/WhatsApp Image 2025-04-11 at 22.08.58_fe707931.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+  #ket1:hover{
+    transition: transform,box-shadow0.5s ease;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #9eaab0;
+    background: url("./public/small_centered_thinner_plus (1).png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20% 20%;
+  }
+#ket2{
+  background: url("./public/LogIQ main poster.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+#ket2:hover{
+  transition: transform,box-shadow0.5s ease;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #9eaab0;
+  background: url("./public/small_centered_thinner_plus (1).png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20% 20%;
+}
+#ket3{
+  background: url("./public/Game Night Poster (Instagram Post).png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+#ket3:hover{
+  transition: transform,box-shadow0.5s ease;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #9eaab0;
+  background: url("./public/small_centered_thinner_plus (1).png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20% 20%;
+}
   .opener{
     display: flex;
     justify-content: center;
@@ -1800,6 +1919,17 @@ border: groove 4px #0176B3;
    
     
     
+    
+  }
+  .elements-active:hover{
+
+    color: #0176B3;
+    cursor:pointer;
+    animation: animation-name 0.5s ease-in-out forwards;
+    box-shadow: 0 0 10px #0176B3;
+    border-radius: 4px;
+    padding: 2vh;
+    transition: all 500ms ease-in ;
     
   }
 

@@ -173,7 +173,7 @@ export const Animate_8 = ({ children, width = "fit-content", delay =0 }: Props) 
     <div
       ref={ref}
       className={isInView ? "animate__animated animate__fadeInLeft" : ""}
-      id="page2"
+      
       style={{
         width,
         opacity: isInView ? 1 : 0, 
@@ -214,7 +214,7 @@ export const Animate_10 = ({ children, width = "fit-content", delay =0 }: Props)
     <div
       ref={ref}
       className={isInView ? "animate__animated animate__fadeInRight " : ""}
-      id="page2"
+      
       style={{
         width,
         opacity: isInView ? 1 : 0, 
@@ -234,7 +234,7 @@ export const Animate_11 = ({ children, width = "fit-content", delay =0 }: Props)
     <div
       ref={ref}
       className={isInView ? "animate__animated animate__fadeIn" : ""}
-      id="page2"
+      
       style={{
         width,
         opacity: isInView ? 1 : 0, 
