@@ -309,7 +309,10 @@ function App() {
         <img id="pop" className="animate__animated animate__fadeInLeft"src="./public/WhatsApp_Image_2025-02-28_at_21.50.10_86d30eac-removebg-preview 2.svg" />
         <button id="cross" className="animate__animated animate__fadeInRight"  onClick={handleClick}> ☰
         </button>
-        <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.3s" }} onClick={() => iconClick("signs")}>Home</p>
+        <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.3s" }} onClick={() => iconClick("signs")}>
+          
+          
+        </p>
 
 <p className='items animate__animated animate__fadeInDown' style={{ animationDelay: "0.5s" }} onClick={() => iconClick("infi_click")}>Infinitum</p>
 
@@ -389,7 +392,35 @@ function App() {
         </Animate_9>
       </div>
      
+      <div id="team">
+    
+    <div id="event">
 
+      <b>GALLERIA</b>
+    </div>
+    <div id="boxes">
+    <Animate_2 width="100%" delay={0.2}>
+      <div className="box"></div>
+      </Animate_2>
+      <Animate_2 width="100%" delay={0.6}>
+      <div className="box"></div>
+      </Animate_2>
+      <Animate_2 width="100%" delay={1.1}>
+      <div className="box"></div>
+      </Animate_2>
+      <Animate_2 width="100%" delay={0.2}>
+      <div className="box"></div>
+      </Animate_2>
+      <Animate_2 width="100%" delay={0.6}>
+      <div className="box"></div>
+      </Animate_2>
+      <Animate_2 width="100%" delay={1.1}>
+      <div className="box"></div>
+      </Animate_2>
+  
+    </div>
+
+  </div> 
       
       <div id="events_">
         <div id="black-sheet">

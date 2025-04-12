@@ -1,5 +1,15 @@
 @import url("https://cdn.lineicons.com/3.0/lineicons.css");
-
+@font-face {
+  font-family: 'Azonix';
+  src: url('fonts/AzonixRegular.eot');
+  src: url('fonts/AzonixRegular.eot?#iefix') format('embedded-opentype'),
+      url('fonts/AzonixRegular.woff2') format('woff2'),
+      url('fonts/AzonixRegular.woff') format('woff'),
+      url('fonts/AzonixRegular.svg#AzonixRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 #nav{
   display: flex;
   flex-direction: row;
@@ -36,20 +46,21 @@
   
  
   color:#ffffff;
-  font-size: 40px;
-  font-family: "Markazi Text","Sans";
+  font-size: 30px;
+  font-family: 'Azonix', sans-serif;
   font-weight:lighter;
-  margin-top: 3vh;
+  margin-top: 4.4vh;
   margin-left: 1.6vh;
   float: right;
-  margin-bottom: 3vh;
+  margin-bottom: 1vh;
 }
 #name #club{
   color:#0176B3;
 }
 .nav-menu p,.buttons{
-  margin-right:8vh;
+  margin-right:5vh;
   margin-top:2vh;
+  font-family: 'Azonix', sans-serif;
 }
 .nav-menu .buttons{
   background-color: #0176B3;
@@ -229,6 +240,7 @@ margin-top: none;
 #head{
   color: #ffffff;
   font-size:4vh;
+  font-family: 'Azonix', sans-serif;
 }
 #footer_bot{
 background-color: #0F0F0F;  
@@ -326,7 +338,7 @@ font-size: 23px !important;
   left: 50%;
   top: 50%;
   
-  font-family:"Gravitas One" ;
+  font-family: 'Azonix', sans-serif;
   src: url('/assets/fonts/AzonixRegular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
@@ -578,10 +590,13 @@ font-size: 23px !important;
   display:block;
   color:#ffffff;
 }
-
+#cm-logo{
+  height: 10vh;
+  margin-top: 1.9vh;
+}
 
 /* Show menu button on small screens */
-@media (max-width: 1450px) {
+@media (max-width: 1400px) {
   .menu-toggle {
       display: inline;
       margin-right: 4vh !important;
@@ -618,10 +633,12 @@ font-size: 23px !important;
   } */
 #our1{
   font-size: 8vh !important;
+  font-family: 'Azonix', sans-serif;
 }
 #events1{
 
   font-size: 8vh !important;
+  font-family: 'Azonix', sans-serif;
 }
 
 }
@@ -637,11 +654,11 @@ font-size: 23px !important;
     
   } */
 #our1{
-  font-size: 6vh !important;
+  font-size:5vh !important;
 }
 #events1{
 
-  font-size: 6vh !important;
+  font-size: 5vh !important;
 }
 .sign{
   font-size: 5vh !important;
@@ -651,7 +668,7 @@ font-size: 23px !important;
 @media (max-width:1300px){
   #event-container{
     flex-direction: column;
-    margin-top: 50vh;
+    margin-top: 20vh;
   }
   #black-sheet{
     height: 250vh !important;
@@ -703,7 +720,8 @@ font-size: 23px !important;
   }
   #name{
     font-size:3vh !important;
-    margin-bottom:2vh !important ;
+    margin-bottom:5vh !important ;
+    
   }
   #cm-logo{
     height:7vh !important;
@@ -737,7 +755,7 @@ font-size: 23px !important;
     }
   
   #black-sheet{
-    height: 150vh !important;
+    height: 130vh !important;
     
 
   }
@@ -782,7 +800,8 @@ height: 70vh !important;
   }
   #name{
     margin-bottom: 3vh !important;
-    font-size: 2.5vh !important;
+    font-size: 2vh !important;
+    margin-top:3.5vh;
   }
   .box{
     width: 100vw !important;
@@ -808,6 +827,7 @@ height: 70vh !important;
   }
   .items{
     font-size: 2.3vw !important;
+   
   }
   #description{
     font-size:3vw;
@@ -821,10 +841,10 @@ height: 70vh !important;
     font-size: 6vw !important;
   }
   #our1{
-    font-size: 8vw !important;
+    font-size: 5vw !important;
   }
   #events1{
-    font-size: 8vw !important;
+    font-size: 5vw !important;
   }
   #form-submit{
     font-size: 3vw !important;
@@ -981,12 +1001,12 @@ display: none;
   font-size: 60px;
   margin-right: 4vh;
   color:white;
-  font-family: "Jost";
+  font-family: 'Azonix', sans-serif;
 }
 #events1{
   font-size: 60px;
   color:#0b6da1 ;
-  font-family: "Jost";
+  font-family: 'Azonix', sans-serif;
 }
 #event_title{
   margin-top:6vh;
@@ -1070,7 +1090,7 @@ display: none;
 }
 .items{
   font-size: 20px;
-  font-family: "Red Hat Display";
+  font-family: 'Azonix', sans-serif;
   margin: 5vh;
   cursor: pointer;
 }
@@ -1131,8 +1151,9 @@ body {
   text-align: center;
   text-transform: uppercase;
   position: relative;
- font-family:"Azonix" ;
- src: url('/assets/fonts/AzonixRegular.ttf') format('ttf');
+ /* font-family:"Azonix" ; */
+ font-family: 'Azonix', sans-serif;
+ /* src: url('/assets/fonts/AzonixRegular.ttf') format('ttf'); */
  margin-top: 5vh;
 }
 
@@ -1180,7 +1201,7 @@ transition: all 0.3s ease-in-out 0s;
 -o-transition: all 0.3s ease-in-out 0s;
 font-size: 15px;
 font-weight: 400;
-font-family: 'Lato', sans-serif;
+font-family: 'Azonix', sans-serif;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
@@ -1272,7 +1293,7 @@ font-size: 20px;
 letter-spacing: 0.5px;	
 font-weight: 900;			
 color: #f8f5f5;
-font-family: "Red Hat Display";
+font-family: 'Azonix', 'sans-serif';
 }
 }
 }
@@ -1736,13 +1757,15 @@ service-item .child {
     box-shadow: 0 0 10px #0176B3;
     border-radius: 4px;
     padding: 2vh;
+    
     transition: all 500ms ease-in ;
 
   }
   .elements{
-    padding: 2vh;
+    
     border-radius: 4px;
-
+    font-family: 'Azonix', sans-serif;
+    margin-bottom: 6vh;
   }
   #event-container{
     display: flex;
@@ -1779,6 +1802,7 @@ service-item .child {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20% 20%;
+    cursor: pointer;
   }
   #preloader {
     position: fixed;
@@ -1914,7 +1938,8 @@ border: groove 4px #0176B3;
     border-radius: 0px;
     padding: 2vh;
     border-radius: 4px;
-    
+    font-family: 'Azonix', sans-serif;
+ 
     
    
     
