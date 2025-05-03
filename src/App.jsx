@@ -236,7 +236,68 @@ function App() {
   //     items.forEach((item) => observer.unobserve(item));
   //   };
   // }, []);
-
+  // Add this JavaScript to handle the scrolling functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollWrapper = document.getElementById('event-scroll-wrapper');
+  const scrollLeftBtn = document.getElementById('scroll-left');
+  const scrollRightBtn = document.getElementById('scroll-right');
+  const eventContainer = document.getElementById('event-container');
+  
+  // Calculate scroll amount (width of one event box + gap)
+  const scrollAmount = 480 + 25; // width + gap
+  
+  scrollLeftBtn.addEventListener('click', function() {
+    scrollWrapper.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+  
+  scrollRightBtn.addEventListener('click', function() {
+    scrollWrapper.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Hide left button initially if at start
+  scrollWrapper.addEventListener('scroll', function() {
+    if (scrollWrapper.scrollLeft <= 0) {
+      scrollLeftBtn.style.opacity = '0.5';
+      scrollLeftBtn.style.cursor = 'not-allowed';
+    } else {
+      scrollLeftBtn.style.opacity = '1';
+      scrollLeftBtn.style.cursor = 'pointer';
+    }
+    
+    // Hide right button if at end
+    if (scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 1) {
+      scrollRightBtn.style.opacity = '0.5';
+      scrollRightBtn.style.cursor = 'not-allowed';
+    } else {
+      scrollRightBtn.style.opacity = '1';
+      scrollRightBtn.style.cursor = 'pointer';
+    }
+  });
+  
+  // Initialize button states
+  scrollWrapper.dispatchEvent(new Event('scroll'));
+  
+  // Optional: Add keyboard arrow key support
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft') {
+      scrollWrapper.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    } else if (e.key === 'ArrowRight') {
+      scrollWrapper.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
 
 
@@ -629,7 +690,7 @@ function App() {
         </div>
       </div>
 
-      <div id="events_">
+      <div id="events">
   <div id="black-sheet">
     <div id="event_title">
       <span id="our1"><b>EVENTS</b></span>
@@ -637,6 +698,7 @@ function App() {
     </div>
     
     <div id="container-head">
+      <button id="scroll-left" className="scroll-button">❮</button>
       <div id="event-scroll-wrapper">
         <div id="event-container">
           <div id="events-scroll-container">
@@ -659,10 +721,10 @@ function App() {
             <Animate_10 width="100%">
               <div className='event-boxes' id="ket6" onClick={toggleDescrition3}></div>
             </Animate_10>
-            {/* Add more event boxes here as needed */}
           </div>
         </div>
       </div>
+      <button id="scroll-right" className="scroll-button">❯</button>
     </div>
   </div>
 </div>

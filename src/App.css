@@ -1900,7 +1900,7 @@ border: groove 4px #0176B3;
 #ket1, #ket2, #ket3, #ket4, #ket5, #ket6 {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover; /* Changed from 100% 100% to maintain aspect ratio */
+  background-size: cover;
 }
 
 #ket1 { background-image: url("./public/WhatsApp Image 2025-04-11 at 22.08.58_fe707931.jpg"); }
@@ -1920,49 +1920,45 @@ border: groove 4px #0176B3;
 #container-head {
   width: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-button {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 15px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.scroll-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+#scroll-left {
+  left: 10px;
+}
+
+#scroll-right {
+  right: 10px;
 }
 
 #event-scroll-wrapper {
   width: 100%;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  padding-top: 35px; /* Space for top scrollbar */
+  padding-top: 35px;
   border-top: 2px solid #333;
   border-bottom: 2px solid #333;
-  scroll-snap-type: x mandatory;
-}
-
-/* Prominent Top Scrollbar */
-#event-scroll-wrapper::-webkit-scrollbar {
-  height: 15px;
-  position: absolute;
-  top: 0;
-}
-
-#event-scroll-wrapper::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 8px;
-  margin: 0 30px;
-}
-
-#event-scroll-wrapper::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 8px;
-  border: 3px solid #333;
-}
-
-#event-scroll-wrapper::-webkit-scrollbar-thumb:hover {
-  background: #333;
-}
-
-/* Firefox scrollbar */
-@supports (scrollbar-color: auto) {
-  #event-scroll-wrapper {
-    scrollbar-color: #555 #f1f1f1;
-    scrollbar-width: thin;
-    scrollbar-highlight-color: #007bff;
-  }
+  scroll-behavior: smooth;
 }
 
 /* Event Container & Boxes */
@@ -1971,14 +1967,13 @@ border: groove 4px #0176B3;
   gap: 25px;
   padding: 20px calc(20% - 200px);
   box-sizing: border-box;
-  margin-top: -15px; /* Compensate for scrollbar height */
+  margin-top: -15px;
 }
 
 .event-boxes {
   flex: 0 0 auto;
   width: 480px;
   height: 500px;
-  scroll-snap-align: center;
   border-radius: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -1992,39 +1987,37 @@ border: groove 4px #0176B3;
   }
   
   .event-boxes {
-    width: 480px;
-    height: 480px; /* Maintain 4:5 aspect ratio */
+    width: 300px;
+    height: 375px;
   }
   
   #event-scroll-wrapper {
     padding-top: 25px;
   }
   
-  #event-scroll-wrapper::-webkit-scrollbar {
-    height: 12px;
+  .scroll-button {
+    font-size: 1.5rem;
+    height: 80px;
+    padding: 0 10px;
   }
-
-  /* #ket1, #ket2, #ket3, #ket4, #ket5, #ket6 {
-    transform(scale: 0.8);
-    scale: 0.5;
-  } */
-}
-
-/* Hover Effects Enhancement */
-.event-boxes:hover {
-  z-index: 10; /* Bring hovered item above others */
 }
 
 #events-scroll-container {
   display: flex;
-  /* gap: 20px; Space between event boxes */
-  justify-content: space-evenly;
-  /* align-items: center; */
-  /* flex-wrap: wrap; */
   padding: 20px 10px;
-  width: max-content; /* Allow container to expand beyond viewport */
+  width: max-content;
 }
-/* Keep all your existing #ket1, #ket2, #ket3 styles */
+
+/* Hide the scrollbar since we're using buttons now */
+#event-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#event-scroll-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
   .opener{
     display: flex;
     justify-content: center;
