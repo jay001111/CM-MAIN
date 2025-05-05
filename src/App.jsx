@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {Reveal,Animate_1,Animate_2,Animate_3,Animate_4,Animate_5,Animate_6,Animate_7,Animate_8,Animate_9,Animate_10,Animate_11} from './AnimatedContent';
 
 import './assets/css/bootstrap.min.css';
@@ -15,6 +15,11 @@ import "aos/dist/aos.css";
 import { useInView } from 'framer-motion';
 
 
+import React from 'react';
+import Slider from 'react-slick';
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 
 
@@ -244,68 +249,115 @@ function App() {
   //     items.forEach((item) => observer.unobserve(item));
   //   };
   // }, []);
-  // Add this JavaScript to handle the scrolling functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const scrollWrapper = document.getElementById('event-scroll-wrapper');
-  const scrollLeftBtn = document.getElementById('scroll-left');
-  const scrollRightBtn = document.getElementById('scroll-right');
-  const eventContainer = document.getElementById('event-container');
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const scrollWrapper = document.getElementById('event-scroll-wrapper');
+//   const scrollLeftBtn = document.getElementById('scroll-left');
+//   const scrollRightBtn = document.getElementById('scroll-right');
+//   const eventContainer = document.getElementById('event-container');
   
-  // Calculate scroll amount (width of one event box + gap)
-  const scrollAmount = 480 + 25; // width + gap
+//   // Calculate scroll amount (width of one event box + gap)
+//   const scrollAmount = 480 + 25; // width + gap
   
-  scrollLeftBtn.addEventListener('click', function() {
-    scrollWrapper.scrollBy({
-      left: -scrollAmount,
-      behavior: 'smooth'
-    });
-  });
+//   scrollLeftBtn.addEventListener('click', function() {
+//     scrollWrapper.scrollBy({
+//       left: -scrollAmount,
+//       behavior: 'smooth'
+//     });
+//   });
   
-  scrollRightBtn.addEventListener('click', function() {
-    scrollWrapper.scrollBy({
-      left: scrollAmount,
-      behavior: 'smooth'
-    });
-  });
+//   scrollRightBtn.addEventListener('click', function() {
+//     scrollWrapper.scrollBy({
+//       left: scrollAmount,
+//       behavior: 'smooth'
+//     });
+//   });
   
-  // Hide left button initially if at start
-  scrollWrapper.addEventListener('scroll', function() {
-    if (scrollWrapper.scrollLeft <= 0) {
-      scrollLeftBtn.style.opacity = '0.5';
-      scrollLeftBtn.style.cursor = 'not-allowed';
-    } else {
-      scrollLeftBtn.style.opacity = '1';
-      scrollLeftBtn.style.cursor = 'pointer';
-    }
+//   // Hide left button initially if at start
+//   scrollWrapper.addEventListener('scroll', function() {
+//     if (scrollWrapper.scrollLeft <= 0) {
+//       scrollLeftBtn.style.opacity = '0.5';
+//       scrollLeftBtn.style.cursor = 'not-allowed';
+//     } else {
+//       scrollLeftBtn.style.opacity = '1';
+//       scrollLeftBtn.style.cursor = 'pointer';
+//     }
     
-    // Hide right button if at end
-    if (scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 1) {
-      scrollRightBtn.style.opacity = '0.5';
-      scrollRightBtn.style.cursor = 'not-allowed';
-    } else {
-      scrollRightBtn.style.opacity = '1';
-      scrollRightBtn.style.cursor = 'pointer';
-    }
-  });
+//     // Hide right button if at end
+//     if (scrollWrapper.scrollLeft + scrollWrapper.clientWidth >= scrollWrapper.scrollWidth - 1) {
+//       scrollRightBtn.style.opacity = '0.5';
+//       scrollRightBtn.style.cursor = 'not-allowed';
+//     } else {
+//       scrollRightBtn.style.opacity = '1';
+//       scrollRightBtn.style.cursor = 'pointer';
+//     }
+//   });
   
-  // Initialize button states
-  scrollWrapper.dispatchEvent(new Event('scroll'));
+//   // Initialize button states
+//   scrollWrapper.dispatchEvent(new Event('scroll'));
   
-  // Optional: Add keyboard arrow key support
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowLeft') {
-      scrollWrapper.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-      });
-    } else if (e.key === 'ArrowRight') {
-      scrollWrapper.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+//   // Optional: Add keyboard arrow key support
+//   document.addEventListener('keydown', function(e) {
+//     if (e.key === 'ArrowLeft') {
+//       scrollWrapper.scrollBy({
+//         left: -scrollAmount,
+//         behavior: 'smooth'
+//       });
+//     } else if (e.key === 'ArrowRight') {
+//       scrollWrapper.scrollBy({
+//         left: scrollAmount,
+//         behavior: 'smooth'
+//       });
+//     }
+//   });
+// });
+
+const sliderRef = useRef(null);
+
+  // Slider settings
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false, // We will use your custom buttons
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: false,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: false,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+        }
+      }
+    ]
+  };
+
+  // Handlers for your buttons
+  const handlePrev = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
 
 
 
@@ -744,7 +796,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       </div>
 
-      <div id="events">
+      {/*<div id="events">
   <div id="black-sheet">
     <div id="event_title">
       <span id="our1"><b>EVENTS</b></span>
@@ -756,7 +808,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div id="event-scroll-wrapper">
         <div id="event-container">
           <div id="events-scroll-container">
-            {/* Your event boxes here */}
+            {/* Your event boxes here */}{/*
             <Animate_8 width="100%" delay={0}>
               <div className='event-boxes' id="ket1" onClick={toggleDescrition}></div>
             </Animate_8>
@@ -774,14 +826,50 @@ document.addEventListener('DOMContentLoaded', function() {
             </Animate_11>
             {/* <Animate_10 width="100%">
               <div className='event-boxes' id="ket6" onClick={toggleDescrition3}></div>
-            </Animate_10> */}
+            </Animate_10> */}{/*}
           </div>
         </div>
       </div>
       <button id="scroll-right" className="scroll-button">❯</button>
     </div>
   </div>
-</div>
+</div>*/}
+<div id="events">
+      <div id="black-sheet">
+        <div id="event_title">
+          <span id="our1"><b>EVENTS</b></span>
+          <span id="events1"><b>'2024&25</b></span>
+        </div>
+
+        <div id="container-head">
+          <button id="scroll-left" className="scroll-button" onClick={handlePrev}>❮</button>
+
+          {/* Replace your scroll wrapper and container with Slider */}
+          <div id="event-scroll-wrapper" style={{ flex: 1, margin: '0 10px' }}>
+            <Slider ref={sliderRef} {...settings}>
+              <Animate_8 width="100%" delay={0}>
+                <div className='event-boxes' id="ket1" onClick={toggleDescrition}></div>
+              </Animate_8>
+              <Animate_11 width="100%" delay={0.3}>
+                <div className='event-boxes' id="ket2" onClick={toggleDescrition1}></div>
+              </Animate_11>
+              <Animate_10 width="100%">
+                <div className='event-boxes' id="ket3" onClick={toggleDescrition3}></div>
+              </Animate_10>
+              <Animate_8 width="100%" delay={0}>
+                <div className='event-boxes' id="ket4" onClick={toggleDescrition4}></div>
+              </Animate_8>
+              <Animate_11 width="100%" delay={0.3}>
+                <div className='event-boxes' id="ket5" onClick={toggleDescrition5}></div>
+              </Animate_11>
+              {/* Add more event boxes here if needed */}
+            </Slider>
+          </div>
+
+          <button id="scroll-right" className="scroll-button" onClick={handleNext}>❯</button>
+        </div>
+      </div>
+    </div>
 
 
       <section id="services" className="services section-padding">

@@ -1897,7 +1897,7 @@ border: groove 4px #0176B3;
 
   }
   /* Event Box Styles (keep all your existing ket1-ket6 styles) */
-#ket1, #ket2, #ket3, #ket4, #ket5, #ket6 {
+/* */#ket1, #ket2, #ket3, #ket4, #ket5, #ket6 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1917,7 +1917,7 @@ border: groove 4px #0176B3;
   background-size: 20%;
 }
 
-/* Scroll Container Styles */
+/* Scroll Container Styles *//*
 #container-head {
   width: 100%;
   position: relative;
@@ -1962,7 +1962,7 @@ border: groove 4px #0176B3;
   scroll-behavior: smooth;
 }
 
-/* Event Container & Boxes */
+/* Event Container & Boxes *//*
 #event-container {
   display: inline-flex;
   gap: 25px;
@@ -1980,7 +1980,7 @@ border: groove 4px #0176B3;
   cursor: pointer;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness *//*
 @media (max-width: 768px) {
   #event-container {
     padding: 0 20px;
@@ -2009,7 +2009,96 @@ border: groove 4px #0176B3;
   width: max-content;
 }
 
-/* Hide the scrollbar since we're using buttons now */
+/* Hide the scrollbar since we're using buttons now *//*
+#event-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#event-scroll-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+} */
+/* Remove or comment out these since React Slick replaces these containers */
+#event-container {
+  /* display: inline-flex;
+  gap: 25px;
+  padding: 20px calc(20% - 200px);
+  box-sizing: border-box;
+  margin-top: -15px; */
+}
+
+#events-scroll-container {
+  /* display: flex;
+  padding: 20px 10px;
+  width: max-content; */
+}
+
+/* Adjust event-scroll-wrapper */
+#event-scroll-wrapper {
+  width: 100%;
+  /* Remove overflow hidden and scroll-behavior */
+  /* overflow-x: hidden;
+  overflow-y: hidden; */
+  padding-top: 35px;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+
+/* Keep event-boxes styles but verify width matches slidesToShow */
+.event-boxes {
+  flex: 0 0 auto;
+  width: 480px; /* adjust if needed */
+  height: 500px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Media queries remain mostly same, adjust if needed */
+@media (max-width: 768px) {
+  .event-boxes {
+    width: 300px;
+    height: 375px;
+  }
+  #event-scroll-wrapper {
+    padding-top: 25px;
+  }
+  .scroll-button {
+    font-size: 1.5rem;
+    height: 80px;
+    padding: 0 10px;
+  }
+}
+
+/* Scroll buttons remain unchanged */
+.scroll-button {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 15px;
+  height: 100px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.scroll-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+#scroll-left {
+  left: 10px;
+}
+
+#scroll-right {
+  right: 10px;
+}
+
+/* Keep scrollbar hiding */
 #event-scroll-wrapper::-webkit-scrollbar {
   display: none;
 }
