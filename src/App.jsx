@@ -834,7 +834,7 @@ const sliderRef = useRef(null);
     </div>
   </div>
 </div>*/}
-<div id="events">
+<div id="events_">
       <div id="black-sheet">
         <div id="event_title">
           <span id="our1"><b>EVENTS</b></span>
