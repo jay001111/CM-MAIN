@@ -1906,9 +1906,10 @@ border: groove 4px #0176B3;
 #ket1 { background-image: url("./public/WhatsApp Image 2025-04-11 at 22.08.58_fe707931.jpg"); }
 #ket2 { background-image: url("./public/LogIQ main poster.png"); }
 #ket3 { background-image: url("./public/Game Night Poster (Instagram Post).png"); }
-#ket4, #ket5, #ket6 { background-image: url("./public/speranza-poster.jpg"); }
+#ket4 { background-image: url("./public/speranza-poster.jpg"); }
+#ket5 { background-image: url("./public/locus-poster.jpg"); }
 
-#ket1:hover, #ket2:hover, #ket3:hover, #ket4:hover, #ket5:hover, #ket6:hover {
+#ket1:hover, #ket2:hover, #ket3:hover, #ket4:hover, #ket5:hover{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform: scale(1.05);
   box-shadow: 0 0 25px #9eaab0;

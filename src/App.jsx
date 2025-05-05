@@ -114,6 +114,14 @@ function App() {
   const toggleDescrition3=()=>{
     setDescriptionInView3(!descriptionInView3);
   }
+  const [descriptionInView4,setDescriptionInView4]=useState(false);
+  const toggleDescrition4=()=>{
+    setDescriptionInView4(!descriptionInView4);
+  }
+  const [descriptionInView5,setDescriptionInView5]=useState(false);
+  const toggleDescrition5=()=>{
+    setDescriptionInView5(!descriptionInView5);
+  }
   // const ref=useRef(null);
   // const isInView=useInView(ref,{once:true});
   // const mainControls=useAnimation();
@@ -192,7 +200,7 @@ function App() {
     }
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -474,6 +482,52 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>
 
+        <div
+          id="infi-desc"
+          className={
+            descriptionInView4
+              ? "opener animate__animated animate__fadeIn"
+              : "closer"
+          }
+        >
+          <button id="cross" onClick={toggleDescrition4}>
+            {" "}
+            &times;
+          </button>
+          <div id="description1">
+            <Animate_6 delay={1.1}>
+              <p>
+              <strong>Speranza</strong> was a fun-filled and exhilarating event conducted as an entertaining online inter-branch competition exclusively for the first year students of NIT Calicut where the contestants from each branch battle against each other to prove their mettle.
+              During the challenging period of a frightful pandemic, the club stepped up, proving to make the best out of every opportunity, by hosting Speranza in an exciting virtual concept as its first ever <strong>fully online event</strong>. 
+              Moreover, Speranza served a greater good by raising funds for Kerala Government's <strong>CoVID relief fund</strong>.
+              </p>
+            </Animate_6>
+          </div>
+        </div>
+
+        <div
+          id="infi-desc"
+          className={
+            descriptionInView5
+              ? "opener animate__animated animate__fadeIn"
+              : "closer"
+          }
+        >
+          <button id="cross" onClick={toggleDescrition5}>
+            {" "}
+            &times;
+          </button>
+          <div id="description1">
+            <Animate_6 delay={1.1}>
+              <p>
+              Launching its first edition in 2019, <strong>Locus</strong> emerged as a technical summit that explores the richness in mathematics. 
+              Comprising of interactive sessions, workshops and intriguing lectures 
+              <strong>Locus</strong> helped give students an insight on Cryptography, Machine Learning, Vedic Mathematics, Finance Modelling and various other concepts, providing a platform for technically driven students to expand their horizons and sharpen their skills.
+              </p>
+            </Animate_6>
+          </div>
+        </div>
+
         <div className={isOpen ? "nav-menuopen" : "nav-menu"}>
           <p
             className={
@@ -713,14 +767,14 @@ document.addEventListener('DOMContentLoaded', function() {
               <div className='event-boxes' id="ket3" onClick={toggleDescrition3}></div>
             </Animate_10>
             <Animate_8 width="100%" delay={0}>
-              <div className='event-boxes' id="ket4" onClick={toggleDescrition}></div>
+              <div className='event-boxes' id="ket4" onClick={toggleDescrition4}></div>
             </Animate_8>
             <Animate_11 width="100%" delay={0.3}>
-              <div className='event-boxes' id="ket5" onClick={toggleDescrition1}></div>
+              <div className='event-boxes' id="ket5" onClick={toggleDescrition5}></div>
             </Animate_11>
-            <Animate_10 width="100%">
+            {/* <Animate_10 width="100%">
               <div className='event-boxes' id="ket6" onClick={toggleDescrition3}></div>
-            </Animate_10>
+            </Animate_10> */}
           </div>
         </div>
       </div>
